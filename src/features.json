@@ -1,0 +1,11 @@
+[
+  { "key": "bathroom", "label": "Bathroom" },
+  { "key": "AC", "label": "AC" },
+  { "key": "kitchen", "label": "Kitchen" },
+  { "key": "TV", "label": "TV" },
+  { "key": "radio", "label": "Radio" },
+  { "key": "refrigerator", "label": "Refrigerator" },
+  { "key": "microwave", "label": "Microwave" },
+  { "key": "gas", "label": "Gas" },
+  { "key": "water", "label": "Water" }
+]

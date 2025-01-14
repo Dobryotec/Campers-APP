@@ -1,0 +1,30 @@
+.active {
+  color: #d84343;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo {
+  display: none;
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+
+.nav-list {
+  display: flex;
+  column-gap: 32px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-logo {
+    display: block;
+  }
+}
