@@ -1,22 +1,112 @@
-.card {
-  max-width: 290px;
-  display: flex;
-  flex-direction: column;
-  column-gap: 24px;
-  padding: 15px;
-  border: 1px solid #dadde1;
-  border-radius: 20px;
-}
-
 .card-image-wrapper {
   flex-shrink: 0;
   width: 258px;
   height: 280px;
   overflow: hidden;
   border-radius: 10px;
+  position: relative;
 }
 .card-image-wrapper > img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header-right-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-title,
+.card-price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.32;
+}
+
+.icon-favorite {
+  cursor: pointer;
+}
+
+.card-wrapper-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+}
+
+.card-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-rating,
+.card-location {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-reviews {
+  text-decoration: underline;
+}
+
+.card-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 12px;
+}
+
+.feature-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background-color: #f2f4f7;
+}
+
+.feature-icon-wrapper {
+  width: 20px;
+  height: 20px;
+}
+
+.feature-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    flex-direction: row;
+    max-width: 900px;
+  }
+  .card-image-wrapper {
+    width: 290px;
+    height: 320px;
+  }
 }

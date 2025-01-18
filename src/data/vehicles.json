@@ -1,0 +1,5 @@
+[
+  { "key": "alcove", "label": "Alcove", "image": "alcove" },
+  { "key": "fullyIntegrated", "label": "Fully Integrated", "image": "fully" },
+  { "key": "panelTruck", "label": "Van", "image": "van" }
+]

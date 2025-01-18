@@ -1,0 +1,11 @@
+[
+  { "key": "bathroom", "label": "Bathroom", "image": "shower" },
+  { "key": "AC", "label": "AC","image": "wind" },
+  { "key": "kitchen", "label": "Kitchen", "image": "kitchen" },
+  { "key": "TV", "label": "TV", "image": "tv" },
+  { "key": "radio", "label": "Radio", "image": "radio" },
+  { "key": "refrigerator", "label": "Refrigerator", "image": "fridge" },
+  { "key": "microwave", "label": "Microwave", "image": "microwave" },
+  { "key": "gas", "label": "Gas", "image": "gas" },
+  { "key": "water", "label": "Water", "image": "water" }
+]

@@ -3,6 +3,12 @@ interface ICamperImage {
   original: string;
 }
 
+interface IReview {
+  reviewer_name: string;
+  reviewer_rating: number;
+  comment: string;
+}
+
 export interface ICamper {
   id: string;
   name: string;
@@ -20,4 +26,30 @@ export interface ICamper {
   microwave: boolean;
   gas: boolean;
   water: boolean;
+  reviews: IReview[];
+  form: string;
+  consumption: string;
+  height: string;
+  length: string;
+  width: string;
+  tank: string;
+}
+
+interface IFeature {
+  key: string;
+  label: string;
+  src: string;
+  value: boolean;
+}
+
+export interface ICamperProps {
+  id: string;
+  name: string;
+  price: number;
+  rating: number;
+  location: string;
+  description: string;
+  gallery: ICamperImage[];
+  features: IFeature[];
+  reviews: IReview[];
 }

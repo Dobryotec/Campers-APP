@@ -4,7 +4,7 @@ import { IButtonProps } from './Button.types';
 
 import css from './Button.module.css';
 
-const Button: React.FC<IButtonProps> = ({ title, link }) => {
+const ButtonLink: React.FC<IButtonProps> = ({ title, link }) => {
   return (
     <Link to={link} className={css.button}>
       {title}
@@ -12,4 +12,4 @@ const Button: React.FC<IButtonProps> = ({ title, link }) => {
   );
 };
 
-export default Button;
+export default ButtonLink;

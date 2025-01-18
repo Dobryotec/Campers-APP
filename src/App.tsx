@@ -1,27 +1,29 @@
 import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 
-import Container from './components/Container/Container';
-import { Suspense } from 'react';
-import Navigation from './components/Navigation/Navigation';
-import HomePage from './pages/HomePage/HomePage';
-import CampersPage from './pages/CampersPage/CampersPage';
-import CamperDetailsPage from './pages/CamperDetailsPage/CamperDetailsPage';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import Features from './components/Features/Features';
-import Reviews from './components/Reviews/Reviews';
+import Spinner from './components/Spinner/Spinner';
 
 import css from './App.module.css';
+
+const Navigation = lazy(() => import('./components/Navigation/Navigation'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const CampersPage = lazy(() => import('./pages/CampersPage/CampersPage'));
+const CamperDetailsPage = lazy(() => import('./pages/CamperDetailsPage/CamperDetailsPage'));
+const Features = lazy(() => import('./components/Features/Features'));
+const Reviews = lazy(() => import('./components/Reviews/Reviews'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
+const Container = lazy(() => import('./components/Container/Container'));
 
 function App() {
   return (
     <>
-      <header className={css.header}>
-        <Container>
-          <Navigation />
-        </Container>
-      </header>
-      <main>
-        <Suspense>
+      <Suspense fallback={<Spinner />}>
+        <header className={css.header}>
+          <Container>
+            <Navigation />
+          </Container>
+        </header>
+        <main className={css.main}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CampersPage />} />
@@ -31,8 +33,8 @@ function App() {
             </Route>
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-        </Suspense>
-      </main>
+        </main>
+      </Suspense>
     </>
   );
 }

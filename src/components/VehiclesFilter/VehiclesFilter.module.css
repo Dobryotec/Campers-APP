@@ -1,0 +1,62 @@
+.vehicles-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vehicles-list {
+  margin-bottom: 40px;
+}
+
+.radio-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  width: 85px;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.radio-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 115px;
+  gap: 8px;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-input:checked + .radio-label {
+  border: 1px solid #e44848;
+  background-color: #ffa500;
+  color: #ffffff;
+}
+
+.radio-label:hover,
+.radio-label:focus {
+  border-color: #e44848;
+}
+
+.radio-label:active {
+  transform: scale(0.95);
+}
+
+@media screen and (min-width: 400px) {
+  .radio-label {
+    width: 120px;
+  }
+}

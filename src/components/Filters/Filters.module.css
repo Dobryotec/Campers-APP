@@ -1,0 +1,95 @@
+.form-filters {
+  width: 100%;
+}
+
+.filters {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #475467;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.filters-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #dadde1;
+}
+
+.form-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-input {
+  padding: 18px 45px;
+  background-color: #f7f7f7;
+  position: relative;
+  border-radius: 12px;
+  max-width: 290px;
+  outline: transparent;
+}
+.form-input::placeholder {
+  color: #101828;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.form-input-label {
+  position: relative;
+  font-size: 16px;
+  color: #6c717b;
+}
+
+.form-input-label::before {
+  content: url('../../assets/images/map.svg');
+  position: absolute;
+  top: 45px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+}
+
+.form-button {
+  max-width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px 60px;
+  background-color: #e44848;
+  color: #fff;
+  border-radius: 200px;
+  outline: transparent;
+  transition: all 0.3s ease;
+}
+.form-button:hover,
+.form-button:focus {
+  background-color: #d84343;
+}
+
+.error-input {
+  border-color: #f44336;
+  background-color: #ffe6e6;
+}
+
+.success-input {
+  border-color: #4caf50;
+  background-color: #e8f5e9;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+  .form-filters {
+    max-width: 385px;
+  }
+}

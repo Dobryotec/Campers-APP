@@ -1,0 +1,92 @@
+.form {
+  max-width: 640px;
+  flex-grow: 1;
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-input {
+  padding: 18px;
+  border-radius: 12px;
+  background-color: #f7f7f7;
+  border: 1px solid rgba(247, 247, 247, 1);
+  outline: transparent;
+}
+
+.form-input::placeholder {
+  color: #6c717b;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.form-textarea {
+  resize: none;
+  height: 110px;
+}
+
+.error {
+  font-size: 14px;
+  color: red;
+  padding-left: 5px;
+}
+
+.error-input {
+  border-color: red;
+}
+
+.success-input {
+  border-color: green;
+}
+
+@media screen and (min-width: 768px) {
+  .error {
+    font-size: 16px;
+  }
+}
+
+.button {
+  padding: 16px 60px;
+  background-color: #e44848;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+  border-radius: 200px;
+  max-width: 160px;
+  outline: transparent;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #d84343;
+}
+
+.date-errors {
+  display: flex;
+  gap: 20px;
+}

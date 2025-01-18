@@ -16,12 +16,12 @@ const Navigation: React.FC = () => {
       </Link>
       <ul className={css['nav-list']}>
         <li>
-          <NavLink to="/" className={getActiveClass}>
+          <NavLink to="/" end className={getActiveClass}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/catalog" className={getActiveClass}>
+          <NavLink to="/catalog" end className={getActiveClass}>
             Catalog
           </NavLink>
         </li>
