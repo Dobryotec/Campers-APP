@@ -13,7 +13,7 @@ import css from './OrderForm.module.css';
 
 const OrderForm: React.FC = () => {
   const handleSubmit = (
-    values: IOrderFormValues,
+    _: IOrderFormValues,
     { resetForm }: FormikHelpers<IOrderFormValues>
   ): void => {
     toast.success('Thank you for your reservation!');
