@@ -50,7 +50,7 @@ const Filters: React.FC = () => {
                   [css['success-input']]: !errors.location && touched.location,
                 })}
                 id={locationId}
-                placeholder="Kyiv, Ukraine"
+                placeholder="Kyiv"
                 name="location"
               />
             </div>

@@ -44,12 +44,18 @@ export const fetchFilteredCampers = createAsyncThunk<
     const {
       data: { items },
     } = await axios<IApiFetchCampersResponse>(`/campers?${query}`);
+
     return items;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      return rejectWithValue({ message: error.message });
+    {
+      if (axios.isAxiosError(error) && error.response?.status === 404) {
+        return [];
+      }
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue({ message: error.message });
+      }
+      return rejectWithValue({ message: 'Something went wrong:(' });
     }
-    return rejectWithValue({ message: 'Something went wrong:(' });
   }
 });
 
