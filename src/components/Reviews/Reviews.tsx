@@ -4,9 +4,10 @@ import { getFirstLetter } from '../../utils/getfirstLetter';
 
 import sprite from '../../assets/images/sprite.svg';
 
-import css from './Reviews.module.css';
 import Container from '../Container/Container';
 import OrderForm from '../OrderForm/OrderForm';
+
+import css from './Reviews.module.css';
 
 const Reviews: React.FC = () => {
   const camper = useSelector(selectCamper);
@@ -25,7 +26,13 @@ const Reviews: React.FC = () => {
                     <ul className={css['review-stars-list']}>
                       {Array.from({ length: 5 }).map((_, index) => (
                         <li key={index}>
-                          <svg key={index} className={css['review-star']} width="16" height="16">
+                          <svg
+                            key={index}
+                            className={css['review-star']}
+                            width="16"
+                            height="16"
+                            aria-label="icon star"
+                          >
                             <use
                               href={`${sprite}#icon-${
                                 index < reviewer_rating ? 'gold-star' : 'star'

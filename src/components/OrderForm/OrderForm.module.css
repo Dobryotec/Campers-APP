@@ -1,7 +1,8 @@
 .form {
   max-width: 640px;
+  width: 100%;
   flex-grow: 1;
-  padding: 44px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -61,12 +62,6 @@
   border-color: green;
 }
 
-@media screen and (min-width: 768px) {
-  .error {
-    font-size: 16px;
-  }
-}
-
 .button {
   padding: 16px 60px;
   background-color: #e44848;
@@ -89,4 +84,13 @@
 .date-errors {
   display: flex;
   gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .error {
+    font-size: 16px;
+  }
+  .form {
+    padding: 44px;
+  }
 }

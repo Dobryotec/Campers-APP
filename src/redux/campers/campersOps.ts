@@ -17,8 +17,6 @@ export const fetchCampers = createAsyncThunk<ICamper[], void, { rejectValue: IAp
       const {
         data: { items },
       } = await axios<IApiFetchCampersResponse>('/campers');
-      console.log(items);
-
       return items;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -46,8 +44,6 @@ export const fetchFilteredCampers = createAsyncThunk<
     const {
       data: { items },
     } = await axios<IApiFetchCampersResponse>(`/campers?${query}`);
-    console.log(items);
-
     return items;
   } catch (error) {
     if (axios.isAxiosError(error)) {

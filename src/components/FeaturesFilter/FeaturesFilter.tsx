@@ -1,5 +1,6 @@
 import { Field } from 'formik';
 import features from '../../data/features.json';
+
 import sprite from '../../assets/images/sprite.svg';
 
 import css from './FeaturesFilter.module.css';
@@ -17,7 +18,12 @@ const FeaturesFilter: React.FC = () => {
             className={css['checkbox-input']}
           />
           <label htmlFor={key} className={css['checkbox-label']}>
-            <svg width="32" height="32" className={css['icon-feature']}>
+            <svg
+              width="32"
+              height="32"
+              className={css['icon-feature']}
+              aria-label={`icon-${label}`}
+            >
               <use href={`${sprite}#icon-${image}`} />
             </svg>
             {label}

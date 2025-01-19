@@ -1,26 +1,10 @@
-.section-features {
-  margin-top: 44px;
-}
-.features-content {
-  display: flex;
-  gap: 40px;
-}
-
-.features {
-  max-width: 640px;
-  flex-grow: 1;
-  padding: 44px;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-}
-
 .features-list {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   column-gap: 8px;
   row-gap: 12px;
-  margin-bottom: 100px;
 }
 .feature-item {
   display: inline-flex;
@@ -40,4 +24,10 @@
 .feature-icon {
   width: 20px;
   height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .features-list {
+    justify-content: flex-start;
+  }
 }

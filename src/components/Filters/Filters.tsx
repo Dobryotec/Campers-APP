@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import { useId } from 'react';
 import { useDispatch } from 'react-redux';
 
+import { setVisibleCampers } from '../../redux/campers/campersSlice';
+import { IParamsFiltering } from './Filters.types';
+import { AppDispatch } from '../../redux/store';
 import { filtersSchema } from '../../utils/filtersSchema';
 import { fetchFilteredCampers } from '../../redux/campers/campersOps';
 
@@ -10,9 +13,6 @@ import FeaturesFilter from '../FeaturesFilter/FeaturesFilter';
 import VehiclesFilter from '../VehiclesFilter/VehiclesFilter';
 
 import css from './Filters.module.css';
-import { setVisibleCampers } from '../../redux/campers/campersSlice';
-import { IParamsFiltering } from './Filters.types';
-import { AppDispatch } from '../../redux/store';
 
 const Filters: React.FC = () => {
   const locationId = useId();

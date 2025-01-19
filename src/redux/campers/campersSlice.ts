@@ -63,7 +63,6 @@ const campersSlice = createSlice({
         state.items = payload;
       })
       .addCase(fetchCamperById.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.loading = false;
         state.camper = payload;
       })
@@ -101,3 +100,4 @@ export const selectLoading = (state: RootState) => state.campers.loading;
 export const selectVisibleCampers = (state: RootState) => state.campers.visibleCampers;
 export const selectCamper = (state: RootState) => state.campers.camper;
 export const selectFiltered = (state: RootState) => state.campers.isFiltered;
+export const selectError = (state: RootState) => state.campers.error;

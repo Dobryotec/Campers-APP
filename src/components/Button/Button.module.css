@@ -11,9 +11,25 @@
   padding: 16px 60px;
   transition: all 0.3s ease;
   outline: transparent;
+  animation: pulse 1.5s infinite;
 }
 
 .button:hover,
 .button:focus {
   background-color: #d84343;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(228, 72, 72, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(228, 72, 72, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(228, 72, 72, 0.7);
+  }
 }

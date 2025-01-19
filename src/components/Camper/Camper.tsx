@@ -1,28 +1,28 @@
-import Button from '../Button/Button';
-import { ICamperProps } from './Camper.types';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { addToFavorites, selectFavorites } from '../../redux/campers/campersSlice';
+import { AppDispatch } from '../../redux/store';
+import { ICamper, ICamperProps } from './Camper.types';
 import { formatedPrice } from '../../utils/formatedPrice';
+import { truncatedText } from '../../utils/truncatedText';
+
+import Button from '../Button/Button';
+import Features from '../Features/Features';
+
+import features from '../../data/features.json';
 
 import sprite from '../../assets/images/sprite.svg';
 
 import css from './Camper.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToFavorites, selectFavorites } from '../../redux/campers/campersSlice';
-import { truncatedText } from '../../utils/truncatedText';
 
-const Camper: React.FC<ICamperProps> = ({
-  id,
-  name,
-  price,
-  rating,
-  location,
-  description,
-  gallery,
-  reviews,
-  features,
-}) => {
-  const dispatch = useDispatch();
+const Camper: React.FC<ICamperProps> = ({ camper }) => {
+  const { gallery, name, price, id, rating, reviews, location, description } = camper;
+
+  const dispatch: AppDispatch = useDispatch();
 
   const favorites = useSelector(selectFavorites);
+
+  const filteredFeatures = features.filter(({ key }) => camper[key as keyof ICamper]);
 
   const isFavorite = favorites.some(favorite => favorite.id === id);
 
@@ -38,9 +38,10 @@ const Camper: React.FC<ICamperProps> = ({
             <p className={css['card-price']}>{formatedPrice(price)} </p>
             <svg
               onClick={() => dispatch(addToFavorites(id))}
-              width="32"
-              height="32"
+              width="20"
+              height="20"
               className={css['icon-favorite']}
+              aria-label="icon heart"
             >
               <use href={`${sprite}#icon-${isFavorite ? 'red-heart' : 'heart'}`} />
             </svg>
@@ -49,35 +50,22 @@ const Camper: React.FC<ICamperProps> = ({
         <div className={css['card-content']}>
           <div className={css['card-info']}>
             <p className={css['card-rating']}>
-              <svg width="16" height="16">
+              <svg width="16" height="16" arai-label="icon star">
                 <use href={`${sprite}#icon-gold-star`} />
               </svg>
-
               <span className={css['card-reviews']}>
                 {rating}({reviews.length} Reviews)
               </span>
             </p>
             <p className={css['card-location']}>
-              <svg width="16" height="16">
+              <svg width="16" height="16" aria-label="icon map">
                 <use href={`${sprite}#icon-map`} />
               </svg>
               {location}
             </p>
           </div>
           <p className={css['card-description']}>{truncatedText(description)}</p>
-
-          <ul className={css.features}>
-            {features.map((feature, index) =>
-              feature.value ? (
-                <li key={index} className={css['feature-item']}>
-                  <div className={css['feature-icon-wrapper']}>
-                    <img src={feature.src} />
-                  </div>
-                  <p className={css['feature-label']}>{feature.label}</p>
-                </li>
-              ) : null
-            )}
-          </ul>
+          <Features filteredFeatures={filteredFeatures} />
           <Button title="Show more" link={id} />
         </div>
       </div>

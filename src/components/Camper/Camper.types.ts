@@ -35,21 +35,7 @@ export interface ICamper {
   tank: string;
 }
 
-interface IFeature {
-  key: string;
-  label: string;
-  src: string;
-  value: boolean;
-}
 
 export interface ICamperProps {
-  id: string;
-  name: string;
-  price: number;
-  rating: number;
-  location: string;
-  description: string;
-  gallery: ICamperImage[];
-  features: IFeature[];
-  reviews: IReview[];
+  camper: ICamper;
 }

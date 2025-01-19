@@ -1,0 +1,25 @@
+.section-features {
+  margin-top: 44px;
+}
+.features-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.features {
+  max-width: 640px;
+  width: 100%;
+  flex-grow: 1;
+  padding: 44px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .features-content {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}

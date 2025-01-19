@@ -3,10 +3,13 @@
 }
 .review-content {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
 }
 .review-list {
   max-width: 640px;
+  width: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -54,4 +57,11 @@
 .review-comment {
   font-size: 16px;
   color: #475467;
+}
+
+@media screen and (min-width: 768px) {
+  .review-content {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
 }

@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
+
 import { selectCamper } from '../../redux/campers/campersSlice';
+import { ICamper } from '../Camper/Camper.types';
 
 import css from './VehicleDetails.module.css';
-import { ICamper } from '../Camper/Camper.types';
 
 const VehicleDetails: React.FC = () => {
   const camper = useSelector(selectCamper) as ICamper;

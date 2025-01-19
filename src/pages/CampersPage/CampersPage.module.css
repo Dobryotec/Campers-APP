@@ -6,10 +6,15 @@
   padding-top: 50px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .content-wrapper {
     flex-direction: row;
     align-items: flex-start;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .content-wrapper {
     gap: 45px;
   }
 }

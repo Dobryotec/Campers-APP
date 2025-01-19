@@ -1,22 +1,25 @@
 import { useEffect } from 'react';
 import { NavLink, NavLinkProps, Outlet, useParams } from 'react-router-dom';
 import clsx from 'clsx';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchCamperById } from '../../redux/campers/campersOps';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCamper, selectLoading } from '../../redux/campers/campersSlice';
-import CamperProfile from '../../components/CamperProfile/CamperProfile';
-
-import css from './CamperDetails.module.css';
-import Container from '../../components/Container/Container';
+import { selectCamper, selectError, selectLoading } from '../../redux/campers/campersSlice';
 import { AppDispatch } from '../../redux/store';
 import { RouteParams } from './CamperDetails.types';
+
+import CamperProfile from '../../components/CamperProfile/CamperProfile';
+import Container from '../../components/Container/Container';
 import Spinner from '../../components/Spinner/Spinner';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+
+import css from './CamperDetails.module.css';
 
 const CamperDetailsPage: React.FC = () => {
   const { id } = useParams<RouteParams>();
   const dispatch: AppDispatch = useDispatch();
   const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
   const camper = useSelector(selectCamper);
 
   useEffect(() => {
@@ -30,11 +33,10 @@ const CamperDetailsPage: React.FC = () => {
 
   return (
     <>
-      {camper && !loading && <CamperProfile />}
+      {camper && !loading && !error && <CamperProfile />}
       <Container>
-        {loading ? (
-          <Spinner />
-        ) : (
+        {loading && !error && <Spinner />}
+        {!loading && !error && (
           <ul className={css['description-links-list']}>
             <li>
               <NavLink to="features" className={getActiveClass}>
@@ -48,6 +50,7 @@ const CamperDetailsPage: React.FC = () => {
             </li>
           </ul>
         )}
+        {!loading && error && <ErrorMessage />}
       </Container>
       <Outlet />
     </>

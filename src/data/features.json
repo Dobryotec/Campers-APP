@@ -1,6 +1,6 @@
 [
   { "key": "bathroom", "label": "Bathroom", "image": "shower" },
-  { "key": "AC", "label": "AC","image": "wind" },
+  { "key": "AC", "label": "AC", "image": "wind" },
   { "key": "kitchen", "label": "Kitchen", "image": "kitchen" },
   { "key": "TV", "label": "TV", "image": "tv" },
   { "key": "radio", "label": "Radio", "image": "radio" },

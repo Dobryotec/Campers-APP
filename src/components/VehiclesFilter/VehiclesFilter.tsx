@@ -12,7 +12,12 @@ const VehiclesFilter = () => {
         <li key={key} className={css['radio-item']}>
           <Field type="radio" name="vehicle" value={key} id={key} className={css['radio-input']} />
           <label htmlFor={key} className={css['radio-label']}>
-            <svg width="32" height="32" className={css['icon-feature']}>
+            <svg
+              width="32"
+              height="32"
+              className={css['icon-feature']}
+              aria-label={`icon ${label}`}
+            >
               <use href={`${sprite}#icon-${image}`} />
             </svg>
             {label}

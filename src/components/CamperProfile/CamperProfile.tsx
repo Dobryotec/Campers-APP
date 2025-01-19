@@ -1,13 +1,16 @@
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
+
+import { selectCamper } from '../../redux/campers/campersSlice';
+import { formatedPrice } from '../../utils/formatedPrice';
+import { ICamper } from '../Camper/Camper.types';
+
+import Container from '../Container/Container';
+import ImageModal from '../Modal/ImageModal';
+
 import sprite from '../../assets/images/sprite.svg';
 
 import css from './CamperProfile.module.css';
-import { selectCamper } from '../../redux/campers/campersSlice';
-import { formatedPrice } from '../../utils/formatedPrice';
-import Container from '../Container/Container';
-import { ICamper } from '../Camper/Camper.types';
-import { useState } from 'react';
-import ImageModal from '../Modal/ImageModal';
 
 const CamperProfile: React.FC = () => {
   const { name, rating, location, price, reviews, gallery, description } = useSelector(
@@ -34,7 +37,7 @@ const CamperProfile: React.FC = () => {
           <h2 className={css['camper-profile-title']}>{name}</h2>
           <div className={css['camper-profile-info']}>
             <p className={css['camper-profile-rating']}>
-              <svg width="16" height="16">
+              <svg width="16" height="16" arai-label="icon star">
                 <use href={`${sprite}#icon-gold-star`} />
               </svg>
               <span className={css['camper-profile-reviews']}>
@@ -42,7 +45,7 @@ const CamperProfile: React.FC = () => {
               </span>
             </p>
             <p className={css['camper-profile-location']}>
-              <svg width="16" height="16">
+              <svg width="16" height="16" aria-label="icon map">
                 <use href={`${sprite}#icon-map`} />
               </svg>
               {location}

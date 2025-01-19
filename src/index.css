@@ -89,7 +89,7 @@ img {
 
 .react-datepicker__input-container input {
   background-color: #f7f7f7;
-  min-width: 250px;
+  max-width: 195px;
   outline: transparent;
 }
 

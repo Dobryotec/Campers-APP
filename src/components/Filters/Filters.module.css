@@ -1,4 +1,7 @@
 .form-filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
@@ -12,7 +15,7 @@
 }
 
 .filters-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
   padding-bottom: 24px;
@@ -88,7 +91,19 @@
   margin-top: 5px;
 }
 
+@media screen and (min-width: 480px) {
+  .filters-title {
+    font-size: 20px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
+  .form-filters {
+    max-width: 285px;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1220px) {
   .form-filters {
     max-width: 385px;
   }

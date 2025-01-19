@@ -13,7 +13,7 @@
 
 .camper-profile-title,
 .camper-profile-price {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.32;
 }
@@ -38,7 +38,7 @@
 
 .camper-profile-rating,
 .camper-profile-location {
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -52,13 +52,15 @@
 
 .camper-profile-image-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   align-items: center;
-  column-gap: 40px;
+  justify-content: center;
   margin-bottom: 28px;
 }
 
 .camper-profile-image-wrapper {
-  width: 305px;
+  width: 290px;
   height: 435px;
   overflow: hidden;
   border-radius: 10px;
@@ -113,4 +115,23 @@
 
 .camper-profile-reviews {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .camper-profile-rating,
+  .camper-profile-location {
+    font-size: 16px;
+  }
+  .camper-profile-title,
+  .camper-profile-price {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .camper-profile-image-list {
+    column-gap: 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }

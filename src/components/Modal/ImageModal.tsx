@@ -1,8 +1,11 @@
 import Modal from 'react-modal';
-import css from './ImageModal.module.css';
-import sprite from '../../assets/images/sprite.svg';
-import { IModalImageProps } from './ImageModal.types';
 import { useEffect } from 'react';
+
+import { IModalImageProps } from './ImageModal.types';
+
+import sprite from '../../assets/images/sprite.svg';
+
+import css from './ImageModal.module.css';
 
 const ImageModal: React.FC<IModalImageProps> = ({ isOpen, image, onClose }) => {
   useEffect(() => {
@@ -26,7 +29,7 @@ const ImageModal: React.FC<IModalImageProps> = ({ isOpen, image, onClose }) => {
       overlayClassName={css.overlay}
     >
       <button onClick={onClose} className={css['modal-close-button']}>
-        <svg width="20" height="20">
+        <svg width="20" height="20" aria-label="icon close modal">
           <use href={`${sprite}#icon-close`} />
         </svg>
       </button>

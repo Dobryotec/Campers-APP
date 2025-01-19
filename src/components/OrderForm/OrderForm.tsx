@@ -1,19 +1,22 @@
 import { Formik, Field, Form, ErrorMessage, FormikHelpers } from 'formik';
 import clsx from 'clsx';
+import toast from 'react-hot-toast';
 import DatePicker from 'react-datepicker';
+
 import 'react-datepicker/dist/react-datepicker.css';
 
 import { orderSchema } from '../../utils/orderSchema';
 
-import css from './OrderForm.module.css';
 import { IOrderFormValues } from './OrderForm.type';
+
+import css from './OrderForm.module.css';
 
 const OrderForm: React.FC = () => {
   const handleSubmit = (
     values: IOrderFormValues,
     { resetForm }: FormikHelpers<IOrderFormValues>
   ): void => {
-    console.log(values);
+    toast.success('Thank you for your reservation!');
     resetForm();
   };
 
@@ -75,6 +78,7 @@ const OrderForm: React.FC = () => {
                 dateFormat="dd-MM-yyyy"
                 placeholderText="Booking date*"
                 minDate={new Date()}
+                className={clsx(css['custom-datepicker'])}
               />
             </div>
             <ErrorMessage component="p" className={css.error} name="startDate" />
