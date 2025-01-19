@@ -9,6 +9,8 @@ import { AppDispatch } from '../../redux/store';
 import { filtersSchema } from '../../utils/filtersSchema';
 import { fetchFilteredCampers } from '../../redux/campers/campersOps';
 
+import sprite from "../../assets/images/sprite.svg";
+
 import FeaturesFilter from '../FeaturesFilter/FeaturesFilter';
 import VehiclesFilter from '../VehiclesFilter/VehiclesFilter';
 
@@ -42,6 +44,14 @@ const Filters: React.FC = () => {
           <div>
             <div className={css['form-input-wrapper']}>
               <label htmlFor={locationId} className={css['form-input-label']}>
+                <svg
+                  width="20"
+                  height="20"
+                  className={css['icon-map']}
+                  aria-label="icon map"
+                >
+                  <use href={`${sprite}#icon-map`} />
+                </svg>
                 Location
               </label>
               <Field

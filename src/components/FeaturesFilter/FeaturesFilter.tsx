@@ -6,9 +6,11 @@ import sprite from '../../assets/images/sprite.svg';
 import css from './FeaturesFilter.module.css';
 
 const FeaturesFilter: React.FC = () => {
+  const filteredFeatures = features.filter(({ key }) => key !== 'engine' && key !== 'transmission');
+
   return (
     <ul className={css['features-list']}>
-      {features.map(({ key, label, image }) => (
+      {filteredFeatures.map(({ key, label, image }) => (
         <li key={key} className={css['checkbox-item']}>
           <Field
             type="checkbox"

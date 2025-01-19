@@ -49,8 +49,7 @@
   color: #6c717b;
 }
 
-.form-input-label::before {
-  content: url('../../assets/images/map.svg');
+.icon-map {
   position: absolute;
   top: 45px;
   left: 20px;

@@ -26,6 +26,8 @@ export interface ICamper {
   microwave: boolean;
   gas: boolean;
   water: boolean;
+  transmission: string;
+  engine: string;
   reviews: IReview[];
   form: string;
   consumption: string;
@@ -34,7 +36,6 @@ export interface ICamper {
   width: string;
   tank: string;
 }
-
 
 export interface ICamperProps {
   camper: ICamper;

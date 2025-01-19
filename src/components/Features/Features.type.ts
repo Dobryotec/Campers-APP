@@ -1,9 +1,5 @@
-interface filteredFeatures {
-  key: string;
-  label: string;
-  image: string;
-}
+import { ICamper } from '../Camper/Camper.types';
 
 export interface IFeaturesProps {
-  filteredFeatures: filteredFeatures[];
+  camper: ICamper;
 }

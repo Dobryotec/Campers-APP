@@ -7,5 +7,10 @@
   { "key": "refrigerator", "label": "Refrigerator", "image": "fridge" },
   { "key": "microwave", "label": "Microwave", "image": "microwave" },
   { "key": "gas", "label": "Gas", "image": "gas" },
-  { "key": "water", "label": "Water", "image": "water" }
+  { "key": "water", "label": "Water", "image": "water" },
+  { "key": "engine", "label": "Petrol", "image": "engine", "value": "petrol" },
+  { "key": "engine", "label": "Hybrid", "image": "engine", "value": "hybrid" },
+  { "key": "engine", "label": "Diesel", "image": "engine", "value": "diesel" },
+  { "key": "transmission", "label": "Automatic", "image": "transmission", "value": "automatic" },
+  { "key": "transmission", "label": "Manual", "image": "transmission", "value": "manual" }
 ]
