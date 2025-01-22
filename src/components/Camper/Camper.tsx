@@ -13,7 +13,7 @@ import sprite from '../../assets/images/sprite.svg';
 
 import css from './Camper.module.css';
 
-const Camper: React.FC<ICamperProps> = ({ camper }) => {
+const Camper: React.FC<ICamperProps> = ({ camper, basePath }) => {
   const { gallery, name, price, id, rating, reviews, location, description } = camper;
 
   const dispatch: AppDispatch = useDispatch();
@@ -62,7 +62,7 @@ const Camper: React.FC<ICamperProps> = ({ camper }) => {
           </div>
           <p className={css['card-description']}>{truncatedText(description)}</p>
           <Features camper={camper} />
-          <Button title="Show more" link={id} newTab />
+          <Button title="Show more" link={`/${basePath}/${id}`} newTab />
         </div>
       </div>
     </>

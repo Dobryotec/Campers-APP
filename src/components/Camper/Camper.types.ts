@@ -39,4 +39,5 @@ export interface ICamper {
 
 export interface ICamperProps {
   camper: ICamper;
+  basePath: string;
 }

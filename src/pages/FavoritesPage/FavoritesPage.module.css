@@ -1,0 +1,49 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 50px;
+}
+
+.favorite-card {
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 24px;
+  padding: 15px;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+  height: 100%;
+  overflow: hidden;
+  gap: 15px;
+}
+
+@media screen and (min-width: 380px) {
+  .favorite-card {
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .favorite-card {
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .favorite-card {
+    min-height: 760px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .favorite-card {
+    flex-direction: row;
+    max-width: 900px;
+    width: 100%;
+    gap: 25px;
+    min-height: 350px;
+  }
+}

@@ -25,6 +25,11 @@ const Navigation: React.FC = () => {
             Catalog
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/favorites" end className={getActiveClass}>
+            Favorites
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

@@ -26,7 +26,7 @@ const CamperList: React.FC = () => {
         {campers.slice(0, visibleCampers).map(camper => {
           return (
             <li key={camper.id} className={css.card}>
-              <Camper camper={camper} />
+              <Camper camper={camper} basePath="catalog" />
             </li>
           );
         })}
